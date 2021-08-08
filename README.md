@@ -20,7 +20,8 @@
 ------------
 
 ## :pencil: About
-GoBarber is an application where customers can book appointments with barbers and hairdressers. On the other hand, barbers can check their daily schedule.
+GoBarber is an application where customers can book appointments with barbers and hairdressers. On the other hand, barbers can check their daily schedule.<br />
+At this point, the mobile app is restricted to customers.
 
 [GoBarber Web](https://github.com/mugasparetto/gobarber-web)<br />
 [GoBarber Mobile](https://github.com/mugasparetto/gobarber-mobile)
