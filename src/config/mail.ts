@@ -13,7 +13,7 @@ export default {
   defaults: {
     from: {
       email: 'mu.gasparetto@gmail.com',
-      name: 'Murilo GMail',
+      name: 'GoBarber Team',
     },
   },
 } as IMailConfig;
