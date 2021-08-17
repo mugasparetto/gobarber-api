@@ -44,7 +44,7 @@ class ForgotPasswordEmailService {
         name: user.name,
         email: user.email,
       },
-      subject: '[GoBarber] Recuperação de senha',
+      subject: '[GoBarber] Reset password',
       templateData: {
         file: emailTemplate,
         variables: {
