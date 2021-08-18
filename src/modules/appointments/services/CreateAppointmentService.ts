@@ -1,4 +1,4 @@
-import { startOfHour, isBefore, getHours } from 'date-fns';
+import { startOfHour, isBefore, getHours, subHours } from 'date-fns';
 import { injectable, inject } from 'tsyringe';
 
 import AppError from '@shared/errors/AppError';
@@ -23,7 +23,7 @@ class CreateAppointmentService {
     provider_id,
     user_id,
   }: IRequestDTO): Promise<Appointment> {
-    const appointmentDate = startOfHour(date);
+    const appointmentDate = subHours(startOfHour(date), 3);
 
     console.log('-----------');
     console.log('Hour', getHours(appointmentDate));
