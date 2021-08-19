@@ -25,11 +25,7 @@ class CreateAppointmentService {
   }: IRequestDTO): Promise<Appointment> {
     const appointmentDate = subHours(startOfHour(date), 3);
 
-    console.log('-----------');
-    console.log('Hour', getHours(appointmentDate));
-    console.log('-----------');
-
-    if (isBefore(appointmentDate, Date.now())) {
+    if (isBefore(appointmentDate, subHours(Date.now(), 3))) {
       throw new AppError("You can't create an appointment on a past date.");
     }
 

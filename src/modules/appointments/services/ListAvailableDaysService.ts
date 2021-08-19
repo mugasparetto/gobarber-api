@@ -1,5 +1,11 @@
 import { injectable, inject } from 'tsyringe';
-import { getDaysInMonth, getDate, isAfter, isWeekend } from 'date-fns';
+import {
+  getDaysInMonth,
+  getDate,
+  isAfter,
+  isWeekend,
+  subHours,
+} from 'date-fns';
 
 import IAppointmentsRepository from '../repositories/IAppointmentsRepository';
 
@@ -47,7 +53,7 @@ class ListAvailableDaysService {
       return {
         day,
         available:
-          isAfter(compareDate, Date.now()) &&
+          isAfter(compareDate, subHours(Date.now(), 3)) &&
           appointmentsInDay.length < 10 &&
           !isWeekend(new Date(year, month - 1, day)),
       };

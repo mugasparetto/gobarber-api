@@ -1,5 +1,5 @@
 import { injectable, inject } from 'tsyringe';
-import { getHours, isAfter, isWeekend } from 'date-fns';
+import { getHours, isAfter, isWeekend, subHours } from 'date-fns';
 
 import IAppointmentsRepository from '../repositories/IAppointmentsRepository';
 
@@ -49,7 +49,7 @@ class ListAvailableHoursService {
         (appointment) => getHours(appointment.date) === hour
       );
 
-      const currentDate = new Date(Date.now());
+      const currentDate = new Date(subHours(Date.now(), 3));
       const compareDate = new Date(year, month - 1, day, hour);
 
       return {
