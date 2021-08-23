@@ -15,7 +15,7 @@ import '@shared/container';
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ origin: 'https://gobarberapp.com', optionsSuccessStatus: 200 }));
 app.use('/files', express.static(uploadConfig.uploadsFolder));
 app.use(express.json());
 app.use('/', routes);
